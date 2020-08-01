@@ -33,6 +33,7 @@ module.exports = {
       },
     ],
     'no-console': 'off',
+    'linebreak-style': ["error", "windows"],
     // disallow reassignment of function parameters
     // disallow parameter object manipulation except for specific exclusions
     'no-param-reassign': [
