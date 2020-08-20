@@ -78,6 +78,12 @@ export default {
       searchText: '',
     };
   },
+  methods: {
+    addtoCart(id, qty) {
+      this.$store.dispatch('addtoCart', { id, qty });
+    },
+    ...mapActions('productsModules', ['getProducts']),
+  },
   computed: {
     filterData() {
       const vm = this;
@@ -89,13 +95,7 @@ export default {
       }
       return this.products;
     },
-    ...mapGetters(['categories', 'products']),
-  },
-  methods: {
-    addtoCart(id, qty) {
-      this.$store.dispatch('addtoCart', { id, qty });
-    },
-    ...mapActions(['getProducts']),
+    ...mapGetters('productsModules', ['categories', 'products']),
   },
   created() {
     this.getProducts();
